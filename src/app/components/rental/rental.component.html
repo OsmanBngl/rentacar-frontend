@@ -1,0 +1,21 @@
+<ul class="list-group">
+    <li class="list-group-item">Kiralama Bilgisi</li>
+    
+   
+  </ul>
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>Car Id</th>
+    <th>Customer Id</th>
+    <th>Kiralama Tarihi Başlangıç</th>
+    <th>Kiralama Tarihi Bitiş</th>
+  </tr>
+  <tr *ngFor="let rental of rentals">
+    <td>{{rental.id}}</td>
+    <td>{{rental.carId}}</td>
+    <td>{{rental.customerId}}</td>
+    <td>{{rental.rentDate}}</td>
+    <td>{{rental.returnDate}}</td>
+  </tr>
+</table>

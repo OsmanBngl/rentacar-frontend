@@ -1,0 +1,17 @@
+<ul class="list-group">
+    <li class="list-group-item">Müşteriler</li>
+</ul>
+
+
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>Kullanıcı Adı </th>
+    <th>Şirket</th>
+  </tr>
+  <tr *ngFor="let customer of customers">
+     <td>{{customer.id}}</td>
+     <td>{{customer.userId}}</td>
+     <td>{{customer.companyName}}</td>
+  </tr>
+</table>

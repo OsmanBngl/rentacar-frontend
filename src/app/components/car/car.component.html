@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li class="list-group-item ">Arabalar</li>
+  <li class="list-group-item active">Arabalar</li>
 </ul>
 
 
@@ -9,7 +9,7 @@
   <table *ngIf="dataLoaded==true" class="table">
     <thead>
       <tr>
-        <th>Id</th>
+        
         <th>Marka</th>
         <th>Renk</th>
         <th>Fiyat</th>
@@ -18,11 +18,11 @@
       </tr>
     </thead>
     <tr *ngFor="let car of cars">
-      <td>{{car.id}}</td>
+     
       <td>{{car.brandName}}</td>
       <td>{{car.colorName}}</td>
-      <td>{{car.modelYear}}</td>
-      <td>{{car.dailyPrice}}</td>
+       <td>{{car.dailyPrice}}</td>
+       <td>{{car.modelYear}}</td>
       <td>{{car.description}}</td>
     </tr>
   </table> 

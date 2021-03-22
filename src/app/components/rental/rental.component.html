@@ -1,20 +1,20 @@
 <ul class="list-group">
-    <li class="list-group-item">Kiralama Bilgisi</li>
+    <li class="list-group-item active">Kiralama Bilgisi</li>
     
    
   </ul>
 <table class="table">
   <tr>
-    <th>Id</th>
-    <th>Car Id</th>
-    <th>Customer Id</th>
+    <th>Ad</th>
+    <th>Soyad</th>
+    <th>Marka</th>
     <th>Kiralama Tarihi Başlangıç</th>
     <th>Kiralama Tarihi Bitiş</th>
   </tr>
   <tr *ngFor="let rental of rentals">
-    <td>{{rental.id}}</td>
-    <td>{{rental.carId}}</td>
-    <td>{{rental.customerId}}</td>
+    <td>{{rental.firstName}}</td>
+    <td>{{rental.lastName}}</td>
+    <td>{{rental.brandName}}</td>
     <td>{{rental.rentDate}}</td>
     <td>{{rental.returnDate}}</td>
   </tr>

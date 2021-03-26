@@ -1,9 +1,9 @@
 export interface Car{
     id:number;
-    brandName:string;
-    colorName:string;
-    modelYear:number;
+    brandName:number;
+    colorName:number;
     dailyPrice:number;
-    description:string;
-
+    descriptions:string;
+    modelYear:number;
+    
 }

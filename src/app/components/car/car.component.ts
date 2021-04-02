@@ -16,10 +16,13 @@ export class CarComponent implements OnInit {
 
   cars: Car[] = []; 
   dataLoaded = false;
-  carDetails:CarDetails[] | null;
+  carDetails:CarDetails[]=[] ;
+  filterText="";
+  carImageBasePath="http://localhost:5000"
 
 
-  constructor(private carService: CarService, private activatedRoute:ActivatedRoute) { }
+  constructor(private carService: CarService,
+     private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -57,6 +60,7 @@ export class CarComponent implements OnInit {
      })
    }
     
+
 
   
 

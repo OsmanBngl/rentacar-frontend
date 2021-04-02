@@ -9,8 +9,9 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandComponent implements OnInit {
  
-  brands:Brand[]=[]
+  brands:Brand[]=[];
   currentBrand: Brand;
+  filterBrands="";
 
   constructor(private brandService:BrandService) { }
 
@@ -42,5 +43,10 @@ export class BrandComponent implements OnInit {
     }else {
       return "list-group-item"
     }
+  }
+
+  clearFilter(){
+    this.filterBrands="";
+    this.getBrands();
   }
 }

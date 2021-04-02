@@ -1,12 +1,46 @@
-<ul class="list-group">
+<div class="mb-3">
+  <label for="filterColors" class="form-label"></label>
+  <input
+    type="text"
+    [(ngModel)]="filterColors"
+    class="form-control"
+    id="filterColors"
+    placeholder="Renk Giriniz"
+  />
+</div>
 
-  <li (click)="setCurrentColor(color)"
+<div *ngIf="filterColors.length > 2" class="alert alert-primary">
+  {{ filterColors }} aradınız
+</div>
+
+
+
+<ul class="list-group list-group-flush m-4">
+  <h4
+    class="ps-2"
+    style="background-color: lightblue; border-radius: 10px; height: 28px"
+  >
+    Renkler
+  </h4>
+
+  <li
+    (click)="setCurrentColor(color)"
      routerLink="/cars/color/{{color.id}}"
-     [class]="getCurrentColorClass(color)"
-     *ngFor="let color of colors">
-     {{color.colorName}} </li>
-</ul>
+    *ngFor="let color of colors | filterColor: filterColors"
+    [class]="getCurrentColorClass(color)"
+  >
+    {{ color.colorName }}
+  </li>
 
-
-<h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5>
  
+  
+  <button
+    routerLink="/cars"
+    (click)="clearFilter()"
+    type="button"
+    aria-current="true"
+    class="btn btn-info"
+  >
+    Clear Filter
+  </button>
+</ul>

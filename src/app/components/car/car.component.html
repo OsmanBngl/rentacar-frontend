@@ -1,5 +1,17 @@
 
+<div class="mb-3">
+    <label for="filterText" class="form-label">Araba Arama</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+     placeholder="Araba İsmi Giriniz">
+  </div>
 
+  <div *ngIf="filterText.length>2" class="alert alert-primary">
+    {{filterText}} aradınız
+    </div>
+   
+    
+        
+      
 <table class="table">
   <thead class="thead-dark">
       <tr>
@@ -9,20 +21,25 @@
           <th>Açıklama</th>
           <th>Model</th>
           <th>Günlük Fiyat</th>
-          <th>Detayları İncele</th>
+          <th>KDV'li Fiyat</th>
+          <th></th>
+         
 
       </tr>
   </thead>
   <tbody>
 
-      <tr *ngFor="let car of cars"  routerLink="/cars/cardetail/{{car.id}}">
+      <tr routerLink="/cars/cardetail/{{car.id}}" *ngFor="let car of cars | filterPipe:filterText"  >
         
                                        
-          <td>{{car.brandName}}</td>
-          <td>{{car.colorName}}</td>
-          <td>{{car.descriptions}}</td>
+          <td>{{car.brandName |uppercase }}</td>
+          <td>{{car.colorName }}</td>
+          <td>{{car.description}}</td>
           <td>{{car.modelYear}}</td>
-          <td>{{car.dailyPrice}}</td>
+          <td>{{car.dailyPrice |currency}}</td>
+          <td>{{car.dailyPrice |vatAdded:18 | currency}}</td>
+          <td><button class="btn btn-primary" type="button">Kirala</button>
+            </td>
          
       </tr>
 

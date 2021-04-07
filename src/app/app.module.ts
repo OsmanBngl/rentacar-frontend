@@ -16,10 +16,11 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { FilterColorPipe } from './pipes/filter-color.pipe';
 import { FilterBrandPipe } from './pipes/filter-brand.pipe';
-import { CarImageComponent } from './components/car-image/car-image.component';
+
 
 import {ToastrModule} from "ngx-toastr";
-import { CarFilterComponent } from './components/car-filter/car-filter.component'
+
+
 
 @NgModule({
   declarations: [
@@ -35,8 +36,7 @@ import { CarFilterComponent } from './components/car-filter/car-filter.component
     FilterPipePipe,
     FilterColorPipe,
     FilterBrandPipe,
-    CarImageComponent,
-    CarFilterComponent,
+    
    
   ],
   imports: [

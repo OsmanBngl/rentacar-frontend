@@ -5,6 +5,7 @@ import { CarComponent } from './components/car/car.component';
 
 
 
+
 const routes: Routes = [
   {path:"",pathMatch:"full",component:CarComponent},
   {path:"cars",component:CarComponent},
@@ -12,7 +13,7 @@ const routes: Routes = [
   {path:"cars/brand/:id",component:CarComponent},
   {path:"cars/cardetail/:id",component:CarDetailComponent},
   {path:"cars/cardetail/:brandId/:colorId",component:CarDetailComponent},
-  {path:"cars/filter/:brandId/:colorId",component:CarDetailComponent}
+ 
    
 
   
